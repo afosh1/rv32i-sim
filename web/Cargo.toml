@@ -1,0 +1,13 @@
+[package]
+name = "rv32i-sim-web"
+version = "0.1.0"
+edition = "2024"
+description = "WebAssembly build of rv32i-sim for the in-browser demo"
+license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+rv32i-sim = { path = ".." }

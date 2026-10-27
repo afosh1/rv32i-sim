@@ -1,0 +1,23 @@
+[package]
+name = "rv32i-sim"
+version = "0.1.0"
+edition = "2024"
+description = "RV32I instruction-set simulator: ELF loading, instruction traces and VCD waveforms; passes the riscv-tests rv32ui suite"
+license = "MIT"
+repository = "https://github.com/afosh1/rv32i-sim"
+readme = "README.md"
+keywords = ["risc-v", "simulator", "emulator", "vcd", "isa"]
+categories = ["emulators", "command-line-utilities"]
+
+[dependencies]
+clap = { version = "4.6.7", features = ["derive"] }
+
+[workspace]
+members = ["web"]
+
+[profile.release]
+lto = true
+opt-level = "s"
+codegen-units = 1
+panic = "abort"
+strip = true
